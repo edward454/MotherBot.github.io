@@ -1,0 +1,193 @@
+<html>
+<head></head>
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+<link href='http://fonts.googleapis.com/css?family=Kreon|Inconsolata' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded',function(){
+		console.log("test loading");
+		var making = document.getElementById("Make");
+		var share = document.getElementById("Share");
+	});
+
+</script>
+	
+<script type="text/javascript">
+		$(document).ready(function(){
+			$('.Make').click(function(){
+				console.log("Make clicked");
+				$.ajax({
+					url: "Food.html",
+					success:function(result){
+						$('#Fresh').html(result);
+					}
+						
+				});
+			});
+
+			$('.Sharing').click(function(){
+				console.log("Share has been clicked");
+				$.ajax({
+					url: "Share.html",
+					success: function(result){
+						$('#Fresh').html(result);
+					}
+
+				});
+			});
+
+			$('#HomeButton').click(function(){
+				console.log("shit");
+			});
+			
+		});
+</script>
+
+
+<style type="text/css">
+	body{
+		margin: 0px;
+		padding: 0px;
+		font-family: 'Kreon', serif;
+		background-color: #98CDDA;
+	}
+
+	#Background{
+		width: 100%;
+		height: 100%;	
+		overflow: none;
+		z-index: -1;
+	}
+
+	#header{
+		width: 100%;
+		height: 60px;
+		background-color:#000;
+		position: fixed;
+		color: #fff;
+		opacity: 0.6;
+		z-index: 1;
+	}
+
+	
+
+	#Fresh{
+		position: absolute;
+		top: 30%;
+	}
+
+	.Make{
+		width: 130px;
+		height: 50%;
+		cursor: pointer;
+
+	}
+
+	.Sharing{
+		width: 130px;
+		height: 50%;
+		cursor: pointer;
+	}
+
+	#Create{
+		padding-left: 20px;
+		
+	}
+
+	#share{
+		padding-left: 10%;
+	
+	}
+
+	#Create :hover{
+		padding-left: 20px;
+		display: block;
+	}
+
+	#share :hover{
+		padding-left: 10%;
+		display: block;
+	}
+	table{
+		padding-left: 32%;
+	}
+
+	table img{
+		cursor: pointer;
+		width: 200px;
+		height: 200px;
+	}
+
+	#footer{
+		background-color: #000;
+		width: 100%;
+		top: 93%;
+		position: fixed;
+		color: #fff;
+		text-align: center;
+		display: none;
+	}
+
+	#Home{
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		bottom: 82%;
+		z-index: 1;
+		padding-left: 25%;
+	}
+
+
+	@media screen and (min-width: 1000px) {
+  
+	#Home{
+		padding-left: 50%;
+	}
+	}
+
+	#HomeButton{
+		cursor: pointer;
+		position: absolute;
+		bottom: 0px;
+		width: 80px;
+		height: 80px;
+		display: none;
+	}
+	}
+
+</style>
+<style type="text/css">
+
+</style>
+<body>	
+	<img id= "Home" src="Image/Logo.png">
+	<div id="header">
+	</div>
+	<br/>
+	<br/>
+	
+	<div id="Main">
+		<!--<img id="Background" src="Image/Background.jpg">-->
+		<center><table id="Fresh">
+			<tr>	
+				<td>
+					<img class="Make" src="Image/food.png">
+					<h2 id="Create">Create Food</h2>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img class="Sharing"  src="Image/Sharing.png">
+					<h2 id="Share">Share</h2>
+				</td>
+			</tr>
+		</table>
+	</center>
+	</div>
+	<img id="HomeButton" src="Image/Home.png">
+	<div id = "footer">
+		<h2>Cooking Now</h2>
+	</div>
+</body>
+</htML>

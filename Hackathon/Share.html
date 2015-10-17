@@ -1,0 +1,68 @@
+<style type="text/css">
+	#OkImage{
+		width: 30px;
+		height: 30px;
+	}
+
+	#CrossImage{
+		width: 30px;
+		height: 30px;
+	}
+
+	#Listening{
+		background-color: #00008B;
+		color: #fff;
+		width: 100px;
+		height: 80px;
+	}
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		console.log("preview has been loaded");
+	});
+
+
+	$('#Listening').click(function(){
+		console.log("Listening to the recording");
+	});
+
+	$('#OkImage').click(function(){
+		//create web socket here
+		console.log("Ok Start Cooking");
+		$.ajax({
+				url:"Socket.php",
+				success: function(result){
+					$('#Socket').html(result);
+				}
+		});
+	});
+
+	$('#CrossImage').click(function(){
+		$.ajax({
+				url:"BackHome.html",
+				success: function(result){
+					$('#Fresh').html(result);
+				}
+		});
+	});
+</script>
+<table>
+	<tr id="PreviewRow">
+		<h2>Preview
+		<img id="OkImage" src="Image/ok.png">
+		<img src="Image/cross.png" id="CrossImage">
+		</h2>
+	</tr>
+	<tr id="FoodTitle">
+		<h2>Mee Rebus</h2>
+	</tr>
+	<tr id="Recipe">
+		<h3>1 packet yellow noodle</h3>
+		<h3>5 gr of seasoning</h3>
+		<h3>5 gr of ketchup</h3>
+	</tr>
+	<tr>
+		<button id="Listening">Share<br/>Recipe</button>
+	</tr>
+</table>
