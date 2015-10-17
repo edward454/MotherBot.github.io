@@ -1,0 +1,90 @@
+<style type="text/css">
+table{
+	top: 20px;
+	position: absolute;
+	right: 30%;
+}
+#HomeText{
+	display: none;
+}
+
+#BackButton{
+	text-align: left;
+}
+
+#Background{
+	height: 800px;
+}
+
+
+#cursoringBack{
+	cursor: pointer;
+	z-index: 0;
+}
+
+#HomeButton{
+	display: block;
+}
+
+@media screen and (min-width: 480px) {
+  table{
+  	position: absolute;
+  	right: 45%;
+  }
+}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		console.log("document loading");
+		$('#Clicking').click(function(){
+			console.log("clicking");
+			$.ajax({
+				url:"FoodChoices.html",
+				success: function(result){
+					$('#Fresh').html(result);
+				}
+			});
+		});
+
+		$('#BackButton').click(function(){
+			consol.log("Back Button");
+		});
+
+		$('#HomeButton').attr("src","Image/back.png");
+
+		$('#HomeButton').click(function(){
+			console.log("Back To Home");
+			$.ajax({
+					url: "BackHome.html",
+					success:function(result){
+						$('#Fresh').html(result);
+					}
+						
+			});
+		});
+	});
+
+
+</script>
+<div id="Food">
+	<center>
+		<table>
+				<center>
+					
+				<tr class="first">
+					<h2>Indomie</h2>
+					<img id="Clicking" src="Image/Indomie.png">
+				</tr>
+			
+			</center>
+			<center>
+				<tr class="second">
+					<br/>
+					<h2>Porridge</h2>
+					<img src="Image/porridge.png">
+				</tr>
+			</center>
+			
+		</table>
+	</center>
+</div>

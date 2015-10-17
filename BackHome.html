@@ -1,0 +1,36 @@
+<tr>	
+		<td>
+		<img class="Make" src="Image/food.png">
+		<h2 id="Create1">Create Food</h2>
+		</td>
+			</tr>
+			<tr>
+				<td>
+					<img class="Sharing"  src="Image/Sharing.png">
+					<h2 id="Share">Share</h2>
+				</td>
+</tr>
+
+<script type="text/javascript">
+		$(document).ready(function(){
+			$('.Make').click(function(){
+				console.log("Make clicked");
+				$.ajax({
+					url: "Food.html",
+					success:function(result){
+						$('#Fresh').html(result);
+					}
+						
+				});
+			});
+
+			$('.Sharing').click(function(){
+				console.log("Share has been clicked");
+			});
+
+			$('#HomeButton').click(function(){
+				console.log("shit");
+			});
+			
+		});
+</script>
